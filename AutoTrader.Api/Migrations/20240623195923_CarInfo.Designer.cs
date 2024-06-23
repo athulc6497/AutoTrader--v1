@@ -4,6 +4,7 @@ using AutoTrader.Api.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AutoTrader.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240623195923_CarInfo")]
+    partial class CarInfo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -107,7 +110,6 @@ namespace AutoTrader.Api.Migrations
                             Ownership = "2nd",
                             PaidFeature = "REMUS Exhaust System",
                             PeakTorque = "600 Nm @ 1200 RPM",
-                            Photo = new byte[] { 48, 130, 8, 0 },
                             Price = "7200000.00m",
                             SeatingCapacityId = 1,
                             TransmissionId = 3,
@@ -127,7 +129,6 @@ namespace AutoTrader.Api.Migrations
                             Ownership = "1st",
                             PaidFeature = "Stock",
                             PeakTorque = "524 Nm @ 4250 rpm",
-                            Photo = new byte[] { 48, 130, 8, 0 },
                             Price = "7200000.00",
                             SeatingCapacityId = 5,
                             TransmissionId = 1,
@@ -329,14 +330,14 @@ namespace AutoTrader.Api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "eeafb0ce-1595-480b-9398-490b20be3315",
+                            Id = "4f4c6a06-8aee-4f7f-961f-ed28a3566d45",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "fbf58d97-fa97-4e8a-8abb-0c600237768c",
+                            Id = "43a8b4fe-2a66-4c20-8986-7d2880f6c47b",
                             ConcurrencyStamp = "2",
                             Name = "User",
                             NormalizedName = "User"

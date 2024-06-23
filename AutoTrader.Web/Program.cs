@@ -11,6 +11,23 @@ builder.Services.AddHttpClient<IRegisterService, RegisterService>(client =>
 {
     client.BaseAddress = new Uri("https://localhost:7154/");
 });
+builder.Services.AddHttpClient<ICarListService, CarListService>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7154/");
+});
+builder.Services.AddHttpClient<IVehicleTypeService, VehicleTypeService>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7154/");
+});
+builder.Services.AddHttpClient<ITransmissionService, TransmissionService>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7154/");
+});
+builder.Services.AddHttpClient<ISeatingCapacityService, SeatingCapacityService>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7154/");
+});
+
 
 
 var app = builder.Build();

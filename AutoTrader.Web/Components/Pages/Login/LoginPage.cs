@@ -25,7 +25,7 @@ namespace AutoTrader.Web.Components.Pages.Login
 
             if (LoginResponse != null)
             {
-                NavigationManager.NavigateTo("/home");
+                NavigationManager.NavigateTo("/carList");
             }
         }
     }

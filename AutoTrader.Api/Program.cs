@@ -13,6 +13,12 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
 
+
+builder.Services.AddScoped<ICarRepository, CarRepository>();
+builder.Services.AddScoped<IVehicleTypeRepository, VehicleTypeRepository>();
+builder.Services.AddScoped<ITransmissionRepository, TransmissionRepository>();
+builder.Services.AddScoped<ISeatingCapacityRepository, SeatingCapacityRepository>();
+
 //For Identity
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().
     AddEntityFrameworkStores<AppDbContext>().
