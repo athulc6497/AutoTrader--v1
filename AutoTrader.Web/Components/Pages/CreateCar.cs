@@ -2,6 +2,7 @@
 using AutoTrader.Web.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 
 namespace AutoTrader.Web.Components.Pages
 {
@@ -87,6 +88,19 @@ namespace AutoTrader.Web.Components.Pages
             if (CarDetails == null)
             {
                 NavigationManager.NavigateTo("/");
+            }
+        }
+
+        protected async Task DeleteCar()
+        {
+            
+            var result = await CarListService.DeleteCar(CarDetails.CarId);
+            if (result != null)
+            {
+                NavigationManager.NavigateTo("/carList");
+            }
+            else
+            {
             }
         }
     }

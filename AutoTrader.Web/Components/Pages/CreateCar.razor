@@ -1,7 +1,9 @@
 ﻿@page "/editCar/{id:int}"
 @page "/newCar/"
+@using Microsoft.AspNetCore.Components.Authorization
 @inherits CreateCarBase
 @rendermode InteractiveServer
+
 
 <h3>@(CarDetails.CarId != 0 ? "Edit Car" : "Add New Car")</h3>
 
@@ -104,6 +106,10 @@
         </div>
     </div>
 
-    <button class="btn btn-primary" type="submit">Submit</button>
+    <button class="btn btn-primary" type="submit">Save</button>
+    @if (CarDetails.CarId != 0)
+    {
+        <button class="btn btn-danger" type="button" @onclick="DeleteCar">Delete</button>
+    }
 </EditForm>
-
+ 

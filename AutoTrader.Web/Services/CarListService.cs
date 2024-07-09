@@ -96,7 +96,7 @@ namespace AutoTrader.Web.Services
 
         public async Task<CarDetails> DeleteCar(int Id)
         {
-            return await httpClient.GetFromJsonAsync<CarDetails>($"api/cars/{Id}");
+            return await httpClient.DeleteFromJsonAsync<CarDetails>($"api/cars/{Id}");
         }
     }
 }

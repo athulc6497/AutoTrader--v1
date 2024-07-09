@@ -89,5 +89,25 @@ namespace AutoTrader.Api.Controllers
             }
         }
 
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult<CarDetails>> DeleteEmployee(int id)
+        {
+            try
+            {
+                var employeeToDelete = await carRepository.GetCar(id);
+                if (employeeToDelete == null)
+                {
+                    return NotFound($"Employee with Id={id} not found");
+                }
+                return await carRepository.DeleteCar(id);
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error ");
+            }
+        }
+
+
     }
 }
